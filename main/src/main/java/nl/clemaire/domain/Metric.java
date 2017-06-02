@@ -7,11 +7,18 @@ public class Metric {
 
     private String name;
 
+    private String identityString;
+
     private MetricType type;
 
-    public Metric(String name, MetricType type) {
+    public Metric(String name, String identityString, MetricType type) {
         this.name = name;
+        this.identityString = identityString;
         this.type = type;
+    }
+
+    public Object parseValue(String value) {
+        return MetricType.parseValue(type, value);
     }
 
     public String getName() {
@@ -20,5 +27,9 @@ public class Metric {
 
     public MetricType getType() {
         return type;
+    }
+
+    public String getIdentityString() {
+        return identityString;
     }
 }

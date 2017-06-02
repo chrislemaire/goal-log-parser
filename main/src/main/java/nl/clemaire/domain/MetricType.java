@@ -5,6 +5,16 @@ package nl.clemaire.domain;
  */
 public enum MetricType {
 
-    INTEGER
+    INTEGER;
+
+    public static Object parseValue(MetricType type, String value) {
+        switch (type) {
+            case INTEGER:
+                return Integer.parseInt(value);
+            default:
+                throw new IllegalArgumentException(
+                        "Unknown MetricType '" + type + "'");
+        }
+    }
 
 }
