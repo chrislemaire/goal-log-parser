@@ -20,6 +20,8 @@ public class PerformanceCycleData {
         this.origData = origData;
         this.parser = parser;
         this.filter = filter;
+
+        parseData();
     }
 
     public void parseData() {
@@ -27,4 +29,7 @@ public class PerformanceCycleData {
         data = filter.filter(allData);
     }
 
+    public Map<Metric, Object> getData() {
+        return data;
+    }
 }
