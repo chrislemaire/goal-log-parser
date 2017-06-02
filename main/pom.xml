@@ -8,5 +8,17 @@
     <artifactId>main</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.jdmp</groupId>
+            <artifactId>jdmp-core</artifactId>
+            <version>0.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jdmp</groupId>
+            <artifactId>jdmp-gui</artifactId>
+            <version>0.3.0</version>
+        </dependency>
+    </dependencies>
 
 </project>
