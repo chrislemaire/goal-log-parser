@@ -1,4 +1,4 @@
-package nl.clemaire.main;
+package nl.clemaire.parse;
 
 import jdk.internal.util.xml.impl.Input;
 

@@ -1,4 +1,4 @@
-package nl.clemaire.main;
+package nl.clemaire.parse;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;

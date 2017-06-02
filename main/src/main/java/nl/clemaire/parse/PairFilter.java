@@ -1,4 +1,4 @@
-package nl.clemaire.main;
+package nl.clemaire.parse;
 
 import nl.clemaire.domain.Metric;
 
