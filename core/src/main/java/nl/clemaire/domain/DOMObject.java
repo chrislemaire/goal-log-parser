@@ -18,6 +18,10 @@ public abstract class DOMObject {
 
     public abstract void parse();
 
+    public Node getNode() {
+        return node;
+    }
+
     public Object getValue() {
         return value;
     }

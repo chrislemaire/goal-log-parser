@@ -3,6 +3,7 @@ package nl.clemaire.domain.objects;
 import nl.clemaire.domain.DOMObject;
 import nl.clemaire.domain.NodeType;
 import nl.clemaire.domain.RecordChildType;
+import nl.clemaire.domain.SuperDOMObject;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -12,7 +13,7 @@ import java.util.List;
 /**
  * Created by Chris Lemaire on 3-6-2017.
  */
-public class Record extends DOMObject {
+public class Record extends SuperDOMObject {
 
     public Record(Node node) {
         super(node);
@@ -36,6 +37,10 @@ public class Record extends DOMObject {
         }
 
         value = buffer;
+    }
+
+    public boolean isPerformanceComplete() {
+        return hasChild("message") && hasChild("millis");
     }
 
 }
