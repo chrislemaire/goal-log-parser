@@ -14,14 +14,13 @@ import java.io.IOException;
  */
 public class XMLParser {
 
-    public Document parse(String filePath) throws ParserConfigurationException, IOException, SAXException {
+    public Document parse(File file) throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setValidating(true);
         factory.setIgnoringElementContentWhitespace(true);
 
         DocumentBuilder builder = factory.newDocumentBuilder();
 
-        File file = new File(filePath);
         return builder.parse(file);
     }
 
