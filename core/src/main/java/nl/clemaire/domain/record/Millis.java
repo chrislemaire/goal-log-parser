@@ -1,10 +1,7 @@
-package domain.record;
+package nl.clemaire.domain.record;
 
-import domain.DOMObject;
+import nl.clemaire.domain.DOMObject;
 import org.w3c.dom.Node;
-
-import java.text.ParseException;
-import java.util.InputMismatchException;
 
 /**
  * Created by Chris Lemaire on 3-6-2017.

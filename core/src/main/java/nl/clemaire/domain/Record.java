@@ -1,4 +1,4 @@
-package domain;
+package nl.clemaire.domain;
 
 import org.w3c.dom.Node;
 

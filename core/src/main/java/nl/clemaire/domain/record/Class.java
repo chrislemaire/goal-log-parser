@@ -1,6 +1,6 @@
-package domain.record;
+package nl.clemaire.domain.record;
 
-import domain.DOMObject;
+import nl.clemaire.domain.DOMObject;
 import org.w3c.dom.Node;
 
 /**

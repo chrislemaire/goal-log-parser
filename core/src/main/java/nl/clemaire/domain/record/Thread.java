@@ -1,17 +1,17 @@
-package domain.record;
+package nl.clemaire.domain.record;
 
-import domain.DOMObject;
+import nl.clemaire.domain.DOMObject;
 import org.w3c.dom.Node;
 
 /**
  * Created by Chris Lemaire on 3-6-2017.
  */
-public class Level extends DOMObject {
+public class Thread extends DOMObject {
 
-    public Level(Node node) {
+    public Thread(Node node) {
         super(node);
 
-        assert "level".equals(node.getNodeName());
+        assert "thread".equals(node.getNodeName());
     }
 
     public void parse() {
