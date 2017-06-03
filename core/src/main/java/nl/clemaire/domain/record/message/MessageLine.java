@@ -33,4 +33,11 @@ public class MessageLine {
         }
     }
 
+    public MessageType getType() {
+        return type;
+    }
+
+    public String[] getCaptures() {
+        return captures;
+    }
 }
