@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public enum MessageType {
 
     MESSAGE("['](.*)['] from ['](.*)['] has been (inserted|deleted) (?:into|from) the mailbox."),
-    BELIEVE("['](.*)['] from ['](.*)['] has been (inserted|deleted) (?:into|from) the belief base."),
+    BELIEF("['](.*)['] from ['](.*)['] has been (inserted|deleted) (?:into|from) the belief base."),
     PERFORMANCE_DATA("env. actions: ([0-9]+), state queries: ([0-9]+), total[beliefs: ([0-9]+), " +
             "goals: ([0-9]+), messages: ([0-9]+), percepts: ([0-9]+)]"),
     CYCLE_SEPARATOR("+++++++ Cycle ([0-9]+) +++++++");

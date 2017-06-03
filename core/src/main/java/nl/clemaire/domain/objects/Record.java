@@ -29,7 +29,7 @@ public class Record extends DOMObject {
 
             NodeType type = RecordChildType.classify(child);
             if (type == null) {
-                System.err.println("Not a matching type available for node '" + node
+                System.err.println("Not a matching type available for node '" + child
                         + "'\n\tin objects: '" + node.getNodeValue());
             }
             buffer.add(type.instantiate(child));
