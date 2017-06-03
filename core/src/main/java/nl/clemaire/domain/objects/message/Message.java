@@ -1,4 +1,4 @@
-package nl.clemaire.domain.record.message;
+package nl.clemaire.domain.objects.message;
 
 import nl.clemaire.domain.DOMObject;
 import org.w3c.dom.Node;

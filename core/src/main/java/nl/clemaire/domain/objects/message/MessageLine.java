@@ -1,4 +1,4 @@
-package nl.clemaire.domain.record.message;
+package nl.clemaire.domain.objects.message;
 
 import java.util.regex.Matcher;
 

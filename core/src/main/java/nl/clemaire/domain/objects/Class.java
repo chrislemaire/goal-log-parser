@@ -1,4 +1,4 @@
-package nl.clemaire.domain.record;
+package nl.clemaire.domain.objects;
 
 import nl.clemaire.domain.DOMObject;
 import org.w3c.dom.Node;
@@ -6,16 +6,15 @@ import org.w3c.dom.Node;
 /**
  * Created by Chris Lemaire on 3-6-2017.
  */
-public class Logger extends DOMObject {
+public class Class extends DOMObject {
 
-    public Logger(Node node) {
+    public Class(Node node) {
         super(node);
 
-        assert "logger".equals(node.getNodeName());
+        assert "class".equals(node.getNodeName());
     }
 
     public void parse() {
         value = node.getNodeValue();
     }
-
 }
