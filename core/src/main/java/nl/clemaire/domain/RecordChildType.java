@@ -1,12 +1,10 @@
 package nl.clemaire.domain;
 
-import nl.clemaire.domain.record.Class;
-import nl.clemaire.domain.record.*;
-import nl.clemaire.domain.record.Thread;
-import nl.clemaire.domain.record.message.Message;
+import nl.clemaire.domain.objects.Class;
+import nl.clemaire.domain.objects.*;
+import nl.clemaire.domain.objects.Thread;
+import nl.clemaire.domain.objects.message.Message;
 import org.w3c.dom.Node;
-
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * Created by Chris Lemaire on 3-6-2017.
@@ -23,36 +21,21 @@ public enum RecordChildType {
     THREAD(Thread.class, "thread"),
     MESSAGE(Message.class, "message");
 
-    private java.lang.Class<? extends DOMObject> fClass;
-    private String nodeName;
+    private NodeType type;
 
     RecordChildType(java.lang.Class<? extends DOMObject> fClass, String nodeName) {
-        this.fClass = fClass;
-        this.nodeName = nodeName;
+        type = new NodeType(fClass, nodeName);
     }
 
-    public static RecordChildType classify(Node node) {
+    public static NodeType classify(Node node) {
         assert node != null;
 
         for (RecordChildType childType : values()) {
-            if (childType.nodeName.equals(node.getNodeName())) {
-                return childType;
+            if (childType.type.matches(node)) {
+                return childType.type;
             }
         }
         return null;
-    }
-
-    public DOMObject instantiate(Node node) {
-        try {
-            return (DOMObject) fClass.getConstructors()[0].newInstance(node);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        }
-        return new DOMObjectEmpty(node);
     }
 
 }
