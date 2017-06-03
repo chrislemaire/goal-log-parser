@@ -11,7 +11,6 @@ public class Sequence extends DOMObject {
     public Sequence(Node node) {
         super(node);
 
-        assert node != null;
         assert "sequence".equals(node.getNodeName());
     }
 

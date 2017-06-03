@@ -13,6 +13,7 @@ public abstract class DOMObject {
     protected Object value;
 
     public DOMObject(Node node) {
+        assert node != null;
         this.node = node;
     }
 

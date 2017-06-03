@@ -18,7 +18,6 @@ public class Date extends DOMObject {
     public Date(Node node) {
         super(node);
 
-        assert node != null;
         assert "date".equals(node.getNodeName());
     }
 

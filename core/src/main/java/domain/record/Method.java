@@ -11,7 +11,6 @@ public class Method extends DOMObject {
     public Method(Node node) {
         super(node);
 
-        assert node != null;
         assert "method".equals(node.getNodeName());
     }
 

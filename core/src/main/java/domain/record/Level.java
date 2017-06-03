@@ -11,7 +11,6 @@ public class Level extends DOMObject {
     public Level(Node node) {
         super(node);
 
-        assert node != null;
         assert "level".equals(node.getNodeName());
     }
 

@@ -11,7 +11,6 @@ public class Logger extends DOMObject {
     public Logger(Node node) {
         super(node);
 
-        assert node != null;
         assert "logger".equals(node.getNodeName());
     }
 

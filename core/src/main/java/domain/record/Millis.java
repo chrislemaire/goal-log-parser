@@ -14,7 +14,6 @@ public class Millis extends DOMObject {
     public Millis(Node node) {
         super(node);
 
-        assert node != null;
         assert "millis".equals(node.getNodeName());
     }
 

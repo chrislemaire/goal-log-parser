@@ -11,7 +11,6 @@ public class Thread extends DOMObject {
     public Thread(Node node) {
         super(node);
 
-        assert node != null;
         assert "thread".equals(node.getNodeName());
     }
 

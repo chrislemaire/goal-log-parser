@@ -11,7 +11,6 @@ public class Class extends DOMObject {
     public Class(Node node) {
         super(node);
 
-        assert node != null;
         assert "class".equals(node.getNodeName());
     }
 
