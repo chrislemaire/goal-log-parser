@@ -1,5 +1,8 @@
-package nl.clemaire.domain;
+package nl.clemaire.domain.objects;
 
+import nl.clemaire.domain.DOMObject;
+import nl.clemaire.domain.NodeType;
+import nl.clemaire.domain.RecordChildType;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -14,7 +17,7 @@ public class Record extends DOMObject {
     public Record(Node node) {
         super(node);
 
-        assert "record".equals(node.getNodeName());
+        assert "objects".equals(node.getNodeName());
     }
 
     public void parse() {
@@ -24,13 +27,12 @@ public class Record extends DOMObject {
         for (int i = 0; i < childs.getLength(); i++) {
             Node child = childs.item(i);
 
-            RecordChildType type = RecordChildType.classify(child);
+            NodeType type = RecordChildType.classify(child);
             if (type == null) {
                 System.err.println("Not a matching type available for node '" + node
-                        + "'\n\tin record: '" + node.getNodeValue());
-            } else {
-                buffer.add(type.instantiate(child));
+                        + "'\n\tin objects: '" + node.getNodeValue());
             }
+            buffer.add(type.instantiate(child));
         }
 
         value = buffer;
