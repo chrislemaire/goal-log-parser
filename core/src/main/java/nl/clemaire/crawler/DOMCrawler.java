@@ -17,19 +17,22 @@ public class DOMCrawler {
     private Document doc;
 
     public DOMCrawler(Document doc) {
+        assert doc != null;
+
         this.doc = doc;
     }
 
     public List<DOMObject> crawl() {
-        List<DOMObject> objects = new ArrayList<DOMObject>();
+        List<DOMObject> objects = new ArrayList<>();
 
         Node current = doc.getElementsByTagName("log").item(0).getFirstChild();
         do {
             NodeType type = LogType.classify(current);
             if (type == null) {
                 System.err.println("Not a matching type available for log-node '" + current + "'");
+            } else {
+                objects.add(type.instantiate(current));
             }
-            objects.add(type.instantiate(current));
         } while ((current = current.getNextSibling()) != null);
 
         return objects;
