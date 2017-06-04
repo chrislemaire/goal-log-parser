@@ -14,15 +14,14 @@ import java.io.IOException;
  */
 public class XMLParser {
 
-    private String filePath;
     private File file;
 
     private Document doc;
 
-    public XMLParser(String filePath)
-            throws IOException {
-        this.filePath = filePath;
+    public XMLParser(String filePath) {
         this.file = new File(filePath);
+
+        parse();
     }
 
     public void parse() {
