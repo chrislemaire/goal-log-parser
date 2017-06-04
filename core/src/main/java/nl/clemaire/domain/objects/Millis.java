@@ -15,7 +15,7 @@ public class Millis extends DOMObject {
     }
 
     public void parse() {
-        value = Long.parseLong(node.getTextContent()());
+        value = Long.parseLong(node.getTextContent());
     }
 
 }

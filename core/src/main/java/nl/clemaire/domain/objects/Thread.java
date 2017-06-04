@@ -15,7 +15,7 @@ public class Thread extends DOMObject {
     }
 
     public void parse() {
-        value = Integer.parseInt(node.getTextContent()());
+        value = Integer.parseInt(node.getTextContent());
     }
 
 }

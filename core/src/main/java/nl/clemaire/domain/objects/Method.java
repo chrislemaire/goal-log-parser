@@ -15,7 +15,7 @@ public class Method extends DOMObject {
     }
 
     public void parse() {
-        value = node.getTextContent()();
+        value = node.getTextContent();
     }
 
 }

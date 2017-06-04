@@ -23,10 +23,10 @@ public class Date extends DOMObject {
 
     public void parse() {
         try {
-            value = format.parse(node.getTextContent()());
+            value = format.parse(node.getTextContent());
         } catch (ParseException e) {
             throw new InputMismatchException(
-                    "The input '" + node.getTextContent()() + "' could not be date-matched.");
+                    "The input '" + node.getTextContent() + "' could not be date-matched.");
         }
     }
 }
