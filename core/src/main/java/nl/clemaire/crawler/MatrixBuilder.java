@@ -87,7 +87,15 @@ public class MatrixBuilder {
     public Matrix build() {
         matrix = DenseMatrix.Factory.zeros(rows.size(), nextRow+1);
 
+        int i = 0, j = 0;
+        for (Map.Entry<Long, List<Integer>> pair : rows.entrySet()) {
+            matrix.setAsLong(pair.getKey(), i, 0);
 
+            j = 0;
+            for (Integer elem : pair.getValue()) {
+                matrix.setAsLong(elem, i, j++);
+            }
+        }
 
         return matrix;
     }
