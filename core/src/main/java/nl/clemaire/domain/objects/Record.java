@@ -18,7 +18,7 @@ public class Record extends SuperDOMObject {
     public Record(Node node) {
         super(node);
 
-        assert "objects".equals(node.getNodeName());
+        assert "record".equals(node.getNodeName());
     }
 
     public void parse() {
@@ -31,9 +31,10 @@ public class Record extends SuperDOMObject {
             NodeType type = RecordChildType.classify(child);
             if (type == null) {
                 System.err.println("Not a matching type available for node '" + child
-                        + "'\n\tin objects: '" + node.getNodeValue());
+                        + "'\n\tin objects: '" + node.getTextContent()());
+            } else {
+                buffer.add(type.instantiate(child));
             }
-            buffer.add(type.instantiate(child));
         }
 
         value = buffer;

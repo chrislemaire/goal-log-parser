@@ -15,6 +15,6 @@ public class Class extends DOMObject {
     }
 
     public void parse() {
-        value = node.getNodeValue();
+        value = node.getTextContent();
     }
 }

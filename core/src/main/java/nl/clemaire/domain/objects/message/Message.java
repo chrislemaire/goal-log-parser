@@ -17,7 +17,7 @@ public class Message extends DOMObject {
     }
 
     public void parse() {
-        String[] lines = node.getNodeValue().split("\n");
+        String[] lines = node.getTextContent()().split("\n");
 
         MessageLine[] buffer = new MessageLine[lines.length];
         for (int i = 0; i < lines.length; i++) {
