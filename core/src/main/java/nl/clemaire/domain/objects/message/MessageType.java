@@ -11,9 +11,10 @@ public enum MessageType {
 
     MESSAGE("['](.*)['] from ['](.*)['] has been (inserted|deleted) (?:into|from) the mailbox."),
     BELIEF("['](.*)['] from ['](.*)['] has been (inserted|deleted) (?:into|from) the belief base."),
-    PERFORMANCE_DATA("env. actions: ([0-9]+), state queries: ([0-9]+), total[beliefs: ([0-9]+), " +
-            "goals: ([0-9]+), messages: ([0-9]+), percepts: ([0-9]+)]"),
-    CYCLE_SEPARATOR("+++++++ Cycle ([0-9]+) +++++++");
+    PERFORMANCE_DATA("env\\. actions: ([0-9]+), state queries: ([0-9]+), total\\[beliefs: ([0-9]+), " +
+            "goals: ([0-9]+), messages: ([0-9]+), percepts: ([0-9]+)\\]"),
+    CYCLE_SEPARATOR("\\+\\+\\+\\+\\+\\+\\+ Cycle ([0-9]+) \\+\\+\\+\\+\\+\\+\\+"),
+    STARTED_AGENT("started agent.");
 
     private String regex;
 

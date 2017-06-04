@@ -3,8 +3,6 @@ package nl.clemaire.domain.objects.message;
 import nl.clemaire.domain.DOMObject;
 import org.w3c.dom.Node;
 
-import java.util.Arrays;
-
 /**
  * Created by Chris Lemaire on 3-6-2017.
  */
@@ -31,15 +29,17 @@ public class Message extends DOMObject {
         return (MessageLine[]) getValue();
     }
 
-    public boolean hasLine(MessageType type) {
-        return Arrays.stream(getLines())
-                .anyMatch(obj -> obj.getType() == type);
+    public MessageLine getLine(MessageType type) {
+        for (MessageLine line : getLines()) {
+            if (line.getType() == type) {
+                return line;
+            }
+        }
+        return null;
     }
 
-    public MessageLine getLine(MessageType type) {
-        return Arrays.stream(getLines())
-                .filter(obj -> obj.getType() == type)
-                .findFirst().orElse(null);
+    public boolean hasLine(MessageType type) {
+        return getLine(type) != null;
     }
 
 }

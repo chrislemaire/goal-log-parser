@@ -29,7 +29,7 @@ public class MessageLine {
 
         captures = new String[matcher.groupCount()];
         for (int i = 1; i <= matcher.groupCount(); i++) {
-            captures[i] = matcher.group(i);
+            captures[i-1] = matcher.group(i);
         }
     }
 

@@ -31,7 +31,7 @@ public class Record extends SuperDOMObject {
             NodeType type = RecordChildType.classify(child);
             if (type == null) {
                 System.err.println("Not a matching type available for node '" + child
-                        + "'\n\tin objects: '" + node.getTextContent()());
+                        + "'\n\tin objects: '" + node.getTextContent());
             } else {
                 buffer.add(type.instantiate(child));
             }

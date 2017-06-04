@@ -13,7 +13,7 @@ import java.util.InputMismatchException;
  */
 public class Date extends DOMObject {
 
-    public static final DateFormat format = new SimpleDateFormat("yyyy-MM-ddTHH:mm:ss");
+    public static final DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
     public Date(Node node) {
         super(node);
@@ -25,6 +25,7 @@ public class Date extends DOMObject {
         try {
             value = format.parse(node.getTextContent());
         } catch (ParseException e) {
+            System.out.println("Soemthing went really wrong with " + node.getTextContent());
             throw new InputMismatchException(
                     "The input '" + node.getTextContent() + "' could not be date-matched.");
         }
