@@ -14,6 +14,8 @@ public abstract class DOMObject {
     public DOMObject(Node node) {
         assert node != null;
         this.node = node;
+
+        parse();
     }
 
     public abstract void parse();
