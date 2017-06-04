@@ -8,7 +8,7 @@ import org.w3c.dom.Node;
  */
 public enum LogType {
 
-    RECORD(Record.class, "objects");
+    RECORD(Record.class, "record");
 
     private NodeType type;
 

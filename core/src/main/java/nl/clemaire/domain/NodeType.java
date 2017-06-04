@@ -27,15 +27,22 @@ public class NodeType {
     public DOMObject instantiate(Node node) {
         if (node != null) {
             try {
-                return (DOMObject) fClass.getConstructors()[0].newInstance(node);
+                return fClass.getConstructor(Node.class).newInstance(node);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
                 e.printStackTrace();
             } catch (InstantiationException e) {
                 e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
             }
         }
         return new DOMObjectEmpty(node);
     }
+
+    public String toString() {
+        return "NodeType<" + fClass.getName() + ", " + nodeName + ">";
+    }
+
 }

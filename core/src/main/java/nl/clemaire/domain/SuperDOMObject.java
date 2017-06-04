@@ -18,14 +18,16 @@ public abstract class SuperDOMObject extends DOMObject {
     }
 
     public DOMObject getChild(String name) {
-        return getChilds().stream()
-                .filter(obj -> obj.getNode().getNodeName().equals(name))
-                .findFirst().orElse(null);
+        for (DOMObject child : getChilds()) {
+            if (child.getNode().getNodeName().equals(name)) {
+                return child;
+            }
+        }
+        return null;
     }
 
     public boolean hasChild(String name) {
-        return getChilds().stream()
-                .anyMatch(obj -> obj.getNode().getNodeName().equals(name));
+        return getChild(name) != null;
     }
 
 }
