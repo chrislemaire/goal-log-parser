@@ -27,3 +27,8 @@ A working example, assuming one is in the directory with core.jar and example.lo
 ```
 java -jar core.jar PF_LOG_MODE example.log
 ```
+
+## Built with
+- [Maven](https://maven.apache.org/) for managing dependencies
+- [UJMP](https://ujmp.org/) for viewing and storing performance matrices
+- [File Utils](https://commons.apache.org/proper/commons-io/) for copying over internal files
