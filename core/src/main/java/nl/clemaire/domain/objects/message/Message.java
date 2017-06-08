@@ -37,7 +37,7 @@ public class Message extends DOMObject {
 
     public MessageLine getLine(MessageType type) {
         for (MessageLine line : getLines()) {
-            if (line.getType() == type) {
+            if (line != null && line.getType() == type) {
                 return line;
             }
         }
