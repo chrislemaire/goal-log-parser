@@ -1,2 +1,8 @@
 *.iml
-.idea/*
+core/.idea/
+core/META-INF/
+core/src/test/
+core/target/
+lib/
+out/
+production/
