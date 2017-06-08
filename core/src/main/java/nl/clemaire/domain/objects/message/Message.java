@@ -3,6 +3,8 @@ package nl.clemaire.domain.objects.message;
 import nl.clemaire.domain.DOMObject;
 import org.w3c.dom.Node;
 
+import java.util.InputMismatchException;
+
 /**
  * Created by Chris Lemaire on 3-6-2017.
  */
@@ -19,7 +21,11 @@ public class Message extends DOMObject {
 
         MessageLine[] buffer = new MessageLine[lines.length];
         for (int i = 0; i < lines.length; i++) {
-            buffer[i] = new MessageLine(lines[i]);
+            try {
+                buffer[i] = new MessageLine(lines[i]);
+            } catch (InputMismatchException e) {
+                System.err.println("Couldn't match '" + lines[i] + "' to an existing MessageType.");
+            }
         }
 
         value = buffer;
@@ -31,7 +37,7 @@ public class Message extends DOMObject {
 
     public MessageLine getLine(MessageType type) {
         for (MessageLine line : getLines()) {
-            if (line.getType() == type) {
+            if (line != null && line.getType() == type) {
                 return line;
             }
         }
