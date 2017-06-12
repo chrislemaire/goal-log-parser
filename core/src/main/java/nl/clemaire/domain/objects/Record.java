@@ -15,13 +15,14 @@ import java.util.List;
  */
 public class Record extends SuperDOMObject {
 
-    public Record(Node node) {
+    public Record(Node node) throws Exception {
         super(node);
 
         assert "record".equals(node.getNodeName());
     }
 
-    public void parse() {
+    public void parse()
+            throws Exception {
         NodeList childs = node.getChildNodes();
 
         List<DOMObject> buffer = new ArrayList<DOMObject>();

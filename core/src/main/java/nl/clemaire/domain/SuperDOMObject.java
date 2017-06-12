@@ -18,7 +18,7 @@ public abstract class SuperDOMObject extends DOMObject {
      *
      * @param node with children from {@link org.w3c.dom.Document}.
      */
-    public SuperDOMObject(Node node) {
+    public SuperDOMObject(Node node) throws Exception {
         super(node);
     }
 

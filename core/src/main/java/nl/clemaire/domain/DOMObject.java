@@ -30,7 +30,7 @@ public abstract class DOMObject {
      *
      * @param node this {@link DOMObject} should represent.
      */
-    public DOMObject(Node node) {
+    public DOMObject(Node node) throws Exception {
         assert node != null;
         this.node = node;
 
@@ -42,7 +42,7 @@ public abstract class DOMObject {
      * from it and store it as a single {@link Object} in the
      * {@link #value} field.
      */
-    public abstract void parse();
+    public abstract void parse() throws Exception;
 
     /**
      * Gets the {@link #node} field.

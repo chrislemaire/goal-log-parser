@@ -8,7 +8,7 @@ import org.w3c.dom.Node;
  */
 public class Sequence extends DOMObject {
 
-    public Sequence(Node node) {
+    public Sequence(Node node) throws Exception {
         super(node);
 
         assert "sequence".equals(node.getNodeName());

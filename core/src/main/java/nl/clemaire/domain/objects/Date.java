@@ -15,7 +15,7 @@ public class Date extends DOMObject {
 
     public static final DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
-    public Date(Node node) {
+    public Date(Node node) throws Exception {
         super(node);
 
         assert "date".equals(node.getNodeName());

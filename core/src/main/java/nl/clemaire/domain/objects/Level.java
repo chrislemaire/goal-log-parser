@@ -8,7 +8,7 @@ import org.w3c.dom.Node;
  */
 public class Level extends DOMObject {
 
-    public Level(Node node) {
+    public Level(Node node) throws Exception {
         super(node);
 
         assert "level".equals(node.getNodeName());

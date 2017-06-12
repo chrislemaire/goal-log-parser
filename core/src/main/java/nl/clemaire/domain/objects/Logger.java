@@ -8,7 +8,7 @@ import org.w3c.dom.Node;
  */
 public class Logger extends DOMObject {
 
-    public Logger(Node node) {
+    public Logger(Node node) throws Exception {
         super(node);
 
         assert "logger".equals(node.getNodeName());

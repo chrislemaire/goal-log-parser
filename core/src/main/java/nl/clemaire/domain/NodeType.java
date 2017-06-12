@@ -57,17 +57,15 @@ public class NodeType {
      * @return instantiated {@link DOMObject} representing given {@link Node}.
      */
     public DOMObject instantiate(Node node)
-            throws InvocationTargetException, NoSuchMethodException,
-                InstantiationException, IllegalAccessException {
-        if (node != null) {
-            try {
-                return fClass.getConstructor(Node.class).newInstance(node);
-            } catch (IllegalAccessException|InvocationTargetException|InstantiationException|NoSuchMethodException e) {
-                System.err.println("Couldn't instantiate class '" + fClass.getName() + "'");
-                throw e;
-            }
+            throws Exception {
+        assert node != null;
+
+        try {
+            return fClass.getConstructor(Node.class).newInstance(node);
+        } catch (IllegalAccessException|InvocationTargetException|InstantiationException|NoSuchMethodException e) {
+            System.err.println("Couldn't instantiate class '" + fClass.getName() + "'");
+            throw e;
         }
-        return new DOMObjectEmpty(node);
     }
 
     /**

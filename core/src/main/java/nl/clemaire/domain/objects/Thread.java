@@ -8,7 +8,7 @@ import org.w3c.dom.Node;
  */
 public class Thread extends DOMObject {
 
-    public Thread(Node node) {
+    public Thread(Node node) throws Exception {
         super(node);
 
         assert "thread".equals(node.getNodeName());

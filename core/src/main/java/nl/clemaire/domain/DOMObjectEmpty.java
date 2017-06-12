@@ -8,7 +8,7 @@ import org.w3c.dom.Node;
 @Deprecated
 public class DOMObjectEmpty extends DOMObject {
 
-    public DOMObjectEmpty(Node node) {
+    public DOMObjectEmpty(Node node) throws Exception {
         super(node);
     }
 

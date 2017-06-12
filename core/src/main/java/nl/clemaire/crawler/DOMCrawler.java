@@ -22,7 +22,8 @@ public class DOMCrawler {
         this.doc = doc;
     }
 
-    public List<DOMObject> crawl() {
+    public List<DOMObject> crawl()
+            throws Exception {
         List<DOMObject> objects = new ArrayList<>();
 
         Node current = doc.getElementsByTagName("log").item(0).getFirstChild();

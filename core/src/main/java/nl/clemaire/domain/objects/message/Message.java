@@ -22,7 +22,7 @@ public class Message extends DOMObject {
      *
      * @param node this {@link Message} object should represent.
      */
-    public Message(Node node) {
+    public Message(Node node) throws Exception {
         super(node);
 
         assert "message".equals(node.getNodeName());

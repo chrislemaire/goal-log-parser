@@ -8,7 +8,7 @@ import org.w3c.dom.Node;
  */
 public class Class extends DOMObject {
 
-    public Class(Node node) {
+    public Class(Node node) throws Exception {
         super(node);
 
         assert "class".equals(node.getNodeName());

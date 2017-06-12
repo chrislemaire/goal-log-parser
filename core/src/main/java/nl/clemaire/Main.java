@@ -1,6 +1,6 @@
 package nl.clemaire;
 
-import nl.clemaire.crawler.LogViewer;
+import nl.clemaire.matrix.LogViewer;
 
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ public class Main {
             if (PERFORMANCE_LOG_MODE.equals(args[0])) {
                 try {
                     LogViewer.showLogFileMatrix(args[1]);
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

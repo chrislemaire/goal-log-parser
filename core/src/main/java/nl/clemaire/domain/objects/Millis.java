@@ -8,7 +8,7 @@ import org.w3c.dom.Node;
  */
 public class Millis extends DOMObject {
 
-    public Millis(Node node) {
+    public Millis(Node node) throws Exception {
         super(node);
 
         assert "millis".equals(node.getNodeName());
