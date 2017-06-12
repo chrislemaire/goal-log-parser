@@ -2,8 +2,6 @@ package nl.clemaire;
 
 import nl.clemaire.matrix.LogViewer;
 
-import java.io.IOException;
-
 /**
  * Created by Chris Lemaire on 4-6-2017.
  */
