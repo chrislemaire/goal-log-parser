@@ -4,16 +4,26 @@ import nl.clemaire.domain.DOMObject;
 import org.w3c.dom.Node;
 
 /**
- * Created by Chris Lemaire on 3-6-2017.
+ * {@link DOMObject} for the level property
+ * of a log record.
+ *
+ * @author Chris Lemaire
  */
 public class Level extends DOMObject {
 
+    /**
+     * Creates a new {@link Level} using super constructor.
+     *
+     * @param node to form {@link Level} object for.
+     * @throws Exception when parsing fails.
+     */
     public Level(Node node) throws Exception {
         super(node);
 
         assert "level".equals(node.getNodeName());
     }
 
+    @Override
     public void parse() {
         value = node.getTextContent();
     }

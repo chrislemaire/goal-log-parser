@@ -9,18 +9,31 @@ import java.text.SimpleDateFormat;
 import java.util.InputMismatchException;
 
 /**
- * Created by Chris Lemaire on 3-6-2017.
+ * {@link DOMObject} for the date property
+ * of a log record.
+ *
+ * @author Chris Lemaire
  */
 public class Date extends DOMObject {
 
-    public static final DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+    /**
+     * The format of the dates properties in log records.
+     */
+    private static final DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
+    /**
+     * Creates a new {@link Date} object using super constructor.
+     *
+     * @param node to form {@link Date} object for.
+     * @throws Exception when parsing fails.
+     */
     public Date(Node node) throws Exception {
         super(node);
 
         assert "date".equals(node.getNodeName());
     }
 
+    @Override
     public void parse() {
         try {
             value = format.parse(node.getTextContent());
